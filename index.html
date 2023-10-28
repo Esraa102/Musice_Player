@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <video muted autoplay loop>
+        <source src="media/production_id-4938208 (2160p).mp4" />
+      </video>
+      <div class="music-player">
+        <div class="details">
+          <img
+            class="song-track"
+            src="media/8713df43-74c2-4501-a4a5-b43e69281bdd.jpg"
+            alt="song-thumbnail"
+          />
+          <p class="song-name">Silent Scream</p>
+          <p class="artist-name">Anna Blue</p>
+          <audio class="song-source">
+            <source
+              src="media/Anna Blue- Silent Scream (Official Music Video).mp3"
+              type="audio/mp3"
+            />
+          </audio>
+        </div>
+        <div class="controls">
+          <div class="prev-track" onclick="prevTrack()">
+            <i class="fa-solid fa-backward"></i>
+          </div>
+          <div class="ctrl-div" onclick="playPauseTrack()">
+            <i class="fa-solid fa-play"></i>
+          </div>
+          <div class="next-track" onclick="nextTrack()">
+            <i class="fa-solid fa-forward"></i>
+          </div>
+        </div>
+        <div class="slider-container">
+          <div class="current-time">00:00</div>
+          <input
+            type="range"
+            value="0"
+            class="progress range"
+            id="seek-range"
+            onchange="seekTo()"
+          />
+          <div class="total-duration"></div>
+        </div>
+        <div class="slider-container">
+          <i class="fa-solid fa-volume-low"></i>
+          <input
+            type="range"
+            value="100"
+            class="volume-range range"
+            min="0"
+            max="100"
+            id="volume-range"
+            onchange="setVolume()"
+          />
+          <i class="fa-solid fa-volume-high"></i>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
